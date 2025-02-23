@@ -13,7 +13,7 @@ export default function MediaGallery() {
   useEffect(() => {
     const fetchMedia = async () => {
       try {
-        const { data } = await axios.get('https://tvmsb.onrender.com/api/media/recent-media?limit=10');
+        const { data } = await axios.get('https://tvmsfb.onrender.com/api/media/recent-media?limit=10');
         setMediaList(data);
       } catch (error) {
         console.error('Error fetching media:', error);

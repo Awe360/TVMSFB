@@ -27,7 +27,7 @@ useEffect(() => {
     
    try {
     
-    const response=await axios.post("https://tvmsb.onrender.com/api/admin/login", { email, password });
+    const response=await axios.post("https://tvmsfb.onrender.com/api/admin/login", { email, password });
     
     dispatch(loginSuccess(response?.data?.user))
     console.log("user",user)

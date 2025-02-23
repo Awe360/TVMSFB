@@ -35,7 +35,7 @@ const dispatch=useDispatch()
     try {
       // await resetPassword(token, password);
       dispatch(resetPasswordStart());
-      const response = await axios.post(`https://tvmsb.onrender.com/api/admin/reset-password/${token}`, {
+      const response = await axios.post(`https://tvmsfb.onrender.com/api/admin/reset-password/${token}`, {
         password,
       });
       dispatch(resetPasswordSuccess());

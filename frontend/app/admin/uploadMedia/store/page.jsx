@@ -20,7 +20,7 @@ const UploadToStore = () => {
 
 //   useEffect(() => {
 //     axios
-//       .get("https://tvmsb.onrender.com/api/tv/all")
+//       .get("https://tvmsfb.onrender.com/api/tv/all")
 //       .then((response) => setTVs(response.data))
 //       .catch((error) => console.error("Error fetching TVs:", error));
 //   }, []);
@@ -63,7 +63,7 @@ const UploadToStore = () => {
       const uploadedUrl = response.data.secure_url;
       const public_id=response.data.public_id
       setCloudinaryUrl(uploadedUrl);
-      await axios.post("https://tvmsb.onrender.com/api/media/store", {
+      await axios.post("https://tvmsfb.onrender.com/api/media/store", {
         mediaUrl: uploadedUrl,
         public_id:public_id,
         title,

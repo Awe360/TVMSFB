@@ -25,7 +25,7 @@ const AdminRegister = () => {
     setLoading(true);
 console.log(adminData);
     try {
-      const res = await axios.post("https://tvmsb.onrender.com/api/admin/register", adminData);
+      const res = await axios.post("https://tvmsfb.onrender.com/api/admin/register", adminData);
       
       toast.success(res.data.message);
       setAdminData({ name: "", ID: "", email: "", password: "" });

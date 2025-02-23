@@ -14,7 +14,7 @@ const HomePage = () => {
   // Fetch all TVs and set TV1 as default if available
   useEffect(() => {
     axios
-      .get("https://tvmsb.onrender.com/api/tv/all")
+      .get("https://tvmsfb.onrender.com/api/tv/all")
       .then((response) => {
         setTVs(response.data);
         const defaultTV = response.data.find((tv) => tv.tvId === "TV1");
@@ -31,7 +31,7 @@ const HomePage = () => {
     setLoading(true);
     setError(null);
     try {
-      const { data } = await axios.get(`https://tvmsb.onrender.com/api/tv/display/${tvID}`);
+      const { data } = await axios.get(`https://tvmsfb.onrender.com/api/tv/display/${tvID}`);
       setMediaUrl(data?.mediaUrl || null);
     } catch (error) {
       setError("Error fetching media.");

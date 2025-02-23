@@ -21,7 +21,7 @@ const dispatch=useDispatch()
     e.preventDefault();
     try {
      dispatch(forgotPasswordStart()) 
-    const response = await axios.post(`https://tvmsb.onrender.com/api/admin/forgot-password`, { email });
+    const response = await axios.post(`https://tvmsfb.onrender.com/api/admin/forgot-password`, { email });
     dispatch(forgotPasswordSuccess());
     setIsSubmitted(true);
   } catch (error) {

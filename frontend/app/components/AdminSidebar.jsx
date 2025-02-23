@@ -34,7 +34,7 @@ const handleLogOut=async() => {
   localStorage.removeItem("user");
   // // Clear persisted Redux state
   // await purgeStoredState(persistConfig);
-  const response=await axios.post('https://tvmsb.onrender.com/api/admin/logout');
+  const response=await axios.post('https://tvmsfb.onrender.com/api/admin/logout');
   dispatch(logout());
   router.push('/auth/login')
   } catch (error) {

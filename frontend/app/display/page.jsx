@@ -20,7 +20,7 @@ export default function ValidatorPage() {
     if (storedDeviceId) {
     //   router.push(`/display/${storedDeviceId}`);
     try {
-        const response = await axios.get(`https://tvmsb.onrender.com/api/tv/validate-device/${storedDeviceId}`);
+        const response = await axios.get(`https://tvmsfb.onrender.com/api/tv/validate-device/${storedDeviceId}`);
         if (response.data.valid) {
           router.push(`/display/${storedDeviceId}`);
         } else {
@@ -50,7 +50,7 @@ export default function ValidatorPage() {
 
     if (deviceId.startsWith("TV")) {
       try {
-        const response = await axios.get(`https://tvmsb.onrender.com/api/tv/validate-device/${deviceId}`);
+        const response = await axios.get(`https://tvmsfb.onrender.com/api/tv/validate-device/${deviceId}`);
         if (response.data.valid) {
           localStorage.setItem("deviceId", deviceId);
           router.push(`/display/${deviceId}`);
@@ -63,7 +63,7 @@ export default function ValidatorPage() {
     } else if (deviceId.startsWith("AD")) {
         {
             try {
-              const response = await axios.post("https://tvmsb.onrender.com/api/admin/validate-admin",{deviceId});
+              const response = await axios.post("https://tvmsfb.onrender.com/api/admin/validate-admin",{deviceId});
               if (response.data.autherized) {
                 router.push("/auth/login");
               } else {
