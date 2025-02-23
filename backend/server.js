@@ -10,7 +10,7 @@ import ScheduleRoutes from './routes/ScheduleRoutes.js'
 dotenv.config();
 // Middleware
 app.use(cors({
-    origin: "https://tvmsfb-mint.onrender.com",
+    origin: ["https://tvmsfb-mint.onrender.com","https://tvms-mint.vercel.app","http://localhost:3000"],
     credentials: true,
 }));
 app.use(express.json());
