@@ -9,7 +9,7 @@ export const generateTokenAndSetCookie = (res, userId) => {
 		httpOnly:true,
 		sameSite: "strict", 
 		secure: true,
-		expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
+		expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
 		path: "/", 
 	});
 
