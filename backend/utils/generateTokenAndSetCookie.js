@@ -13,11 +13,14 @@ export const generateTokenAndSetCookie = (res, userId) => {
 	// 	path: "/", 
 	// });
 	res.cookie("token", token, {
-    httpOnly: true,
-    secure: true, // Set to false for localhost (HTTP)
-    sameSite: "none", // Allow cross-origin cookies
-    maxAge: 60 * 60 * 24 * 7, // 1 week
+  httpOnly: true,  // Prevent JavaScript access
+  secure: true,    // Must be true for HTTPS (Vercel & Render are HTTPS)
+  sameSite: "None", // Required for cross-origin requests
+  path: "/",
+  maxAge: 24 * 60 * 60 * 1000,  // 1-day expiration
 });
+
+	
 	
 	return token;
 };
