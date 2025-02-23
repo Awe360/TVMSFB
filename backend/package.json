@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js",
+    "dev": "server.js",
     "build": "echo 'No build step needed'"
   },
   "name": "backend",
