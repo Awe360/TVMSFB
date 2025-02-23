@@ -14,7 +14,7 @@ export const generateTokenAndSetCookie = (res, userId) => {
 	// });
 	res.cookie("token", token, {
     httpOnly: true,
-    secure: false, // Set to false for localhost (HTTP)
+    secure: true, // Set to false for localhost (HTTP)
     sameSite: "none", // Allow cross-origin cookies
     maxAge: 60 * 60 * 24 * 7, // 1 week
 });
