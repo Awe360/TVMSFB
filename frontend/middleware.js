@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { jwtVerify } from "jose";
 
 export async function middleware(req) {
-    const token = req.cookies.get("token")?.value;
+    const token = req.cookies.get("token")?.value || req.headers.get("cookie")?.split("token=")[1]?.split(";")[0];
     const navigatingRoute = req.nextUrl.pathname;
 
     console.log("Protected route:", navigatingRoute);
