@@ -3,6 +3,7 @@
 import axios from "axios";
 import { Loader, Tv } from "lucide-react";
 import { useState, useEffect } from "react";
+axios.defaults.withCredentials = true;
 
 const HomePage = () => {
   const [tvs, setTVs] = useState([]);
