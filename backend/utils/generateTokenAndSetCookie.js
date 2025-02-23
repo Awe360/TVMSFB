@@ -6,10 +6,10 @@ export const generateTokenAndSetCookie = (res, userId) => {
 	});
 
 	res.cookie("token", token, {
-		// httpOnly:true,
+		httpOnly:true,
 		sameSite: "none", 
 		secure: true,
-		maxAge: 60 * 60 * 24 * 7,
+		expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
 		path: "/", 
 	});
 
