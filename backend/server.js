@@ -10,7 +10,7 @@ import ScheduleRoutes from './routes/ScheduleRoutes.js'
 dotenv.config();
 // Middleware
 app.use(cors({
-    origin: ["http://localhost:3000", "https://tvmsfb.vercel.app"],
+    origin: ["http://localhost:3000", "https://tvms-mint.vercel.app/"],
     credentials: true,
 }));
 app.use(express.json());
