@@ -7,8 +7,9 @@ export const generateTokenAndSetCookie = (res, userId) => {
 
 	res.cookie("token", token, {
 		httpOnly: true,
-		sameSite: "strict",
-		secure: process.env.NODE_ENV === "production"
+		sameSite: "None", 
+		secure: process.env.NODE_ENV === "production", 
+		path: "/", 
 	});
 	
 	return token;
