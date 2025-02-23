@@ -31,7 +31,7 @@ useEffect(() => {
     
     dispatch(loginSuccess(response?.data?.user))
     console.log("user",user)
-    router.push("/admin/home");
+    router.push("admin/home");
 
    } catch (error) {
     console.log(error)
