@@ -15,7 +15,7 @@ export const generateTokenAndSetCookie = (res, userId) => {
 	res.cookie("token", token, {
   httpOnly: true,  // Prevent JavaScript access
   secure: true,    // Must be true for HTTPS (Vercel & Render are HTTPS)
-  sameSite: "None", // Required for cross-origin requests
+  sameSite: "strict", // Required for cross-origin requests
   path: "/",
   maxAge: 24 * 60 * 60 * 1000,  // 1-day expiration
 });
