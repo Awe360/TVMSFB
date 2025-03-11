@@ -4,6 +4,10 @@ import axios from "axios";
 import { Loader, Tv } from "lucide-react";
 import { useState, useEffect } from "react";
 axios.defaults.withCredentials = true;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 386cd3be52480d04a3e29001392f7bcc85310877
 const HomePage = () => {
   const [tvs, setTVs] = useState([]);
   const [selectedTV, setSelectedTV] = useState(null);
@@ -11,7 +15,7 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Fetch all TVs and set TV1 as default if available
+  // Fetch all TVs and sehttps://tvmsfb.onrender.comle
   useEffect(() => {
     axios
       .get("https://tvmstd.onrender.com/api/tv/all")
@@ -28,9 +32,7 @@ const HomePage = () => {
 
   // Fetch media by selected TV ID
   const fetchMediaByID = async (tvID) => {
-    setLoading(true);
-    setError(null);
-    try {
+    setLoading(true)https://tvmsfb.onrender.com try {
       const { data } = await axios.get(`https://tvmstd.onrender.com/api/tv/display/${tvID}`);
       setMediaUrl(data?.mediaUrl || null);
     } catch (error) {
