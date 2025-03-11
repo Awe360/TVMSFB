@@ -11,6 +11,7 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  // Fetch all TVs and sehttps://tvmsfb.onrender.comle
   useEffect(() => {
     axios
       .get("https://tvmstd.onrender.com/api/tv/all")
@@ -27,7 +28,8 @@ const HomePage = () => {
 
   // Fetch media by selected TV ID
   const fetchMediaByID = async (tvID) => {
-    setLoading(true)https://tvmsfb.onrender.com try {
+    setLoading(true)
+     try {
       const { data } = await axios.get(`https://tvmstd.onrender.com/api/tv/display/${tvID}`);
       setMediaUrl(data?.mediaUrl || null);
     } catch (error) {
