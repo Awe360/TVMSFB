@@ -20,7 +20,7 @@ const CloudinaryUpload = () => {
 
   useEffect(() => {
     axios
-      .get("https://tvmsfb.onrender.com/api/tv/all")
+      .get("https://tvmstd.onrender.com/api/tv/all")
       .then((response) => setTVs(response.data))
       .catch((error) => console.error("Error fetching TVs:", error));
   }, []);
@@ -72,7 +72,7 @@ const CloudinaryUpload = () => {
       setCloudinaryUrl(uploadedUrl);
   
       // Save media details to the backend
-      await axios.post("https://tvmsfb.onrender.com/api/media/save", {
+      await axios.post("https://tvmstd.onrender.com/api/media/save", {
         tvId: selectedTv,
         mediaUrl: uploadedUrl,
         public_id,

@@ -22,7 +22,7 @@ const AdminTable = () => {
   useEffect(() => {
     const fetchAdmins = async () => {
       try {
-        const response = await axios.get("https://tvmsfb.onrender.com/api/admin/get-all-admin");
+        const response = await axios.get("https://tvmstd.onrender.com/api/admin/get-all-admin");
         const allAdmins = response.data;
         setAdmins(allAdmins.filter((admin) => admin.status === "Unblocked"));
         setBlockedAdmins(allAdmins.filter((admin) => admin.status === "Blocked"));
@@ -48,7 +48,7 @@ const AdminTable = () => {
 
     if (result.isConfirmed) {
     try {
-    const response= await axios.post("https://tvmsfb.onrender.com/api/admin/block-admin", { userId: id }); 
+    const response= await axios.post("https://tvmstd.onrender.com/api/admin/block-admin", { userId: id }); 
       setAdmins((prev) => prev.filter((admin) => admin.ID !== id));
       setBlockedAdmins((prev) => [...prev, admins.find((admin) => admin.ID === id)]);
       Swal.fire({
@@ -79,7 +79,7 @@ const AdminTable = () => {
     });
     if (result.isConfirmed) {
     try {
-      await axios.post("https://tvmsfb.onrender.com/api/admin/unblock-admin", { userId: id });
+      await axios.post("https://tvmstd.onrender.com/api/admin/unblock-admin", { userId: id });
       setBlockedAdmins((prev) => prev.filter((admin) => admin.ID !== id));
       setAdmins((prev) => [...prev, blockedAdmins.find((admin) => admin.ID === id)]);
       Swal.fire({
@@ -110,7 +110,7 @@ const AdminTable = () => {
 
     if (result.isConfirmed) {
       try {
-        await axios.post("https://tvmsfb.onrender.com/api/admin/delete", { userId: id });
+        await axios.post("https://tvmstd.onrender.com/api/admin/delete", { userId: id });
         setAdmins((prev) => prev.filter((admin) => admin.ID !== id));
         setBlockedAdmins((prev) => prev.filter((admin) => admin.ID !== id));
 

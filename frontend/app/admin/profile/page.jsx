@@ -46,7 +46,7 @@ export default function ProfilePage() {
 
     try {
       const response = await axios.post(
-        "https://tvmsfb.onrender.com/api/admin/profile/save-profile",
+        "https://tvmstd.onrender.com/api/admin/profile/save-profile",
         { userId, email, name }
       );
       dispatch(setUser(response.data.user));
@@ -64,7 +64,7 @@ export default function ProfilePage() {
     }
     try {
       const response = await axios.post(
-        "https://tvmsfb.onrender.com/api/admin/profile/change-password",
+        "https://tvmstd.onrender.com/api/admin/profile/change-password",
         { userId, email, currentPassword, newPassword }
       );
       toast.success(response.data.message);
@@ -104,7 +104,7 @@ export default function ProfilePage() {
   const saveProfileImage = async (imageUrl) => {
     try {
       const response = await axios.post(
-        "https://tvmsfb.onrender.com/api/admin/profile/update-photo",
+        "https://tvmstd.onrender.com/api/admin/profile/update-photo",
         {
           userId,
           profileImage: imageUrl,

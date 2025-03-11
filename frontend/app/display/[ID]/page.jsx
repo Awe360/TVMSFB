@@ -6,7 +6,7 @@ import axios from 'axios';
 import { Loader } from 'lucide-react';
 import io from 'socket.io-client';
 
-export const socket = io('https://tvmsfb.onrender.com', { 
+export const socket = io('https://tvmstd.onrender.com', { 
   autoConnect: false, 
   reconnection: true, 
   reconnectionAttempts: 10,
@@ -29,7 +29,7 @@ export default function TVScreen() {
 
     const fetchMedia = async () => {
       try {
-        const { data } = await axios.get(`https://tvmsfb.onrender.com/api/media/fetch-media/${tvId}`);
+        const { data } = await axios.get(`https://tvmstd.onrender.com/api/media/fetch-media/${tvId}`);
         if (data?.mediaUrl) {
           setMediaUrl(data.mediaUrl);
           setMediaType(getMediaType(data.mediaUrl));

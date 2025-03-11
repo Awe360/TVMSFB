@@ -9,7 +9,10 @@ import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { loginFailure, loginStart, loginSuccess, setUser } from "@/app/redux/authSlice";
 import axios from "axios";
+
 axios.defaults.withCredentials = true;
+// axios.defaults.baseURL = "https://tvmstd.onrender.com"; 
+// axios.defaults.withCredentials = true;
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,6 +23,7 @@ const {user,isLoading,error}=useSelector((state)=>state.auth)
 useEffect(() => {
   console.log("User State Updated:", user);
 }, [user]);
+//https://tvmstd.onrender.com
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -27,7 +31,7 @@ useEffect(() => {
     
    try {
     
-    const response=await axios.post("https://tvmsfb.onrender.com/api/admin/login", { email, password });
+    const response=await axios.post("https://tvmstd.onrender.com/api/admin/login", { email, password });
     
     dispatch(loginSuccess(response?.data?.user))
     console.log("user",user)

@@ -18,7 +18,7 @@ const ScheduleTable = () => {
 
   const fetchSchedules = async () => {
     try {
-      const response = await axios.get("https://tvmsfb.onrender.com/api/schedule/getAllSchedules");
+      const response = await axios.get("https://tvmstd.onrender.com/api/schedule/getAllSchedules");
       setSchedules(response?.data);
       console.log(response?.data);
     } catch (error) {
@@ -44,7 +44,7 @@ const ScheduleTable = () => {
   
     if (result.isConfirmed) {
       try {
-        await axios.post(`https://tvmsfb.onrender.com/api/schedule/cancel`, { _id: id });
+        await axios.post(`https://tvmstd.onrender.com/api/schedule/cancel`, { _id: id });
   
         setSchedules((prevSchedules) =>
           prevSchedules.map((schedule) =>
@@ -81,7 +81,7 @@ const ScheduleTable = () => {
   
     if (result.isConfirmed) {
       try {
-        await axios.post(`https://tvmsfb.onrender.com/api/schedule/delete`, { _id: id });
+        await axios.post(`https://tvmstd.onrender.com/api/schedule/delete`, { _id: id });
   
         setSchedules((prevSchedules) =>
           prevSchedules.filter((schedule) =>

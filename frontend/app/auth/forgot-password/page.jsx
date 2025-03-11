@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { forgotPasswordFailure, forgotPasswordStart, forgotPasswordSuccess } from "@/app/redux/authSlice";
 import axios from "axios";
 
-
+axios.defaults.withCredentials = true;
 const ForgotPasswordPage = () => {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -21,7 +21,7 @@ const dispatch=useDispatch()
     e.preventDefault();
     try {
      dispatch(forgotPasswordStart()) 
-    const response = await axios.post(`https://tvmsfb.onrender.com/api/admin/forgot-password`, { email });
+    const response = await axios.post(`https://tvmstd.onrender.com/api/admin/forgot-password`, { email });
     dispatch(forgotPasswordSuccess());
     setIsSubmitted(true);
   } catch (error) {

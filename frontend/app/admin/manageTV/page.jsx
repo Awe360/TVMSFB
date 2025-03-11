@@ -22,7 +22,7 @@ export default function ManageTVPage() {
 
   const fetchTVs = async () => {
     try {
-      const res = await axios.get("https://tvmsfb.onrender.com/api/tv/all");
+      const res = await axios.get("https://tvmstd.onrender.com/api/tv/all");
       setTvs(res.data);
     } catch (error) {
       toast.error("Failed to fetch TVs!");
@@ -41,7 +41,7 @@ export default function ManageTVPage() {
         });
         if (result.isConfirmed) {
     try {
-      await axios.post(`https://tvmsfb.onrender.com/api/tv/delete/${tvId}`);
+      await axios.post(`https://tvmstd.onrender.com/api/tv/delete/${tvId}`);
        Swal.fire({
               title: "Deleted!",
               text: `${tvId} deleted successfully`,

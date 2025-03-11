@@ -8,7 +8,7 @@ export default function RegisteredTVs() {
 
   useEffect(() => {
     axios
-      .get("https://tvmsfb.onrender.com/api/tv/all") 
+      .get("https://tvmstd.onrender.com/api/tv/all") 
       .then((response) => setTVs(response.data))
       .catch((error) => console.error("Error fetching TVs:", error));
   }, []);

@@ -30,7 +30,7 @@ export default function RegisterTV() {
     setLoading(true);
 
     try {
-      const res = await axios.post("https://tvmsfb.onrender.com/api/tv/register-tv", formData);
+      const res = await axios.post("https://tvmstd.onrender.com/api/tv/register-tv", formData);
 
       toast.success("TV registered successfully!");
       router.push("/admin/fetchAllTV"); 

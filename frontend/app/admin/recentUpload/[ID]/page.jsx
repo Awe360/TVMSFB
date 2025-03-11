@@ -33,13 +33,13 @@ const DetailPage = () => {
   
   useEffect(() => {
     axios
-      .get("https://tvmsfb.onrender.com/api/tv/all")
+      .get("https://tvmstd.onrender.com/api/tv/all")
       .then((response) => setTVs(response.data))
       .catch((error) => console.error("Error fetching TVs:", error));
   }, []);
   const fetchMediaByID = async () => {
     try {
-      const { data } = await axios.get(`https://tvmsfb.onrender.com/api/media/find-media/${mediaID}`);
+      const { data } = await axios.get(`https://tvmstd.onrender.com/api/media/find-media/${mediaID}`);
       setMediaData(data);
      
       
@@ -71,7 +71,7 @@ const DetailPage = () => {
   const handleSchedule = async ({ mediaId, tvId,mediaUrl,public_id,mediaCategory, startDateTime, endDateTime, title, description ,schduledBy}) => {
     try {
       // Make API call
-      const response = await axios.post('https://tvmsfb.onrender.com/api/schedule/setSchedule',{mediaId, tvId,mediaUrl,public_id,mediaCategory, startDateTime, endDateTime, title, description });
+      const response = await axios.post('https://tvmstd.onrender.com/api/schedule/setSchedule',{mediaId, tvId,mediaUrl,public_id,mediaCategory, startDateTime, endDateTime, title, description });
       return response?.data
     
     } catch (error) {
@@ -145,7 +145,7 @@ const DetailPage = () => {
       try {
         setIsDelete(true)
         console.log("request;",id,public_id,mediaType);
-        await axios.post(`https://tvmsfb.onrender.com/api/media/deleteMedia`,  { id,public_id,mediaType} );
+        await axios.post(`https://tvmstd.onrender.com/api/media/deleteMedia`,  { id,public_id,mediaType} );
         
         Swal.fire({
           title: "Deleted!",
@@ -182,7 +182,7 @@ const DetailPage = () => {
       setIsDisplay(true);
 
     try {
-     const res= await axios.post("https://tvmsfb.onrender.com/api/media/display-to-tv", {
+     const res= await axios.post("https://tvmstd.onrender.com/api/media/display-to-tv", {
       _id,tvId,mediaUrl,public_id,title,description,mediaCategory});
         console.log("response",res.data)
         toast.success(`successfull,media is live on ${tvId}`);

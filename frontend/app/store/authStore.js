@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API_URL = "https://tvmsfb.onrender.com/api/admin"
+const API_URL = "https://tvmstd.onrender.com/api/admin";
     
 
 axios.defaults.withCredentials = true;
@@ -109,7 +109,7 @@ export const useAuthStore = create((set) => ({
     set({ isLoading: true, error: null });
     try {
       console.log("before")
-      const response = await axios.post(`https://tvmsfb.onrender.com/api/admin/forgot-password`, { email });
+      const response = await axios.post(`https://tvmstd.onrender.com/api/admin/forgot-password`, { email });
       console.log("after sent")
       set({ message: response.data.message, isLoading: false });
     } catch (error) {
@@ -124,7 +124,7 @@ export const useAuthStore = create((set) => ({
   resetPassword: async (token, password) => {
     set({ isLoading: true, error: null });
     try {
-      const response = await axios.post(`https://tvmsfb.onrender.com/api/admin/reset-password/${token}`, {
+      const response = await axios.post(`https://tvmstd.onrender.com/api/admin/reset-password/${token}`, {
         password,
       });
       set({ message: response.data.message, isLoading: false });
